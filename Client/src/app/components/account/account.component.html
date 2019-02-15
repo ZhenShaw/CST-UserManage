@@ -1,0 +1,37 @@
+<div class="component">
+    <div class="body">
+        <div class="title">个人信息</div>
+
+        <div class="item">
+            <div style="flex:1">用户名:</div>
+            <div style="flex:3" class="username" id="username">{{userInfo.username}}</div>
+        </div>
+
+        <div class="item">
+            <div style="flex:1">密 码:</div>
+            <input style="flex:3" type="password" value="{{userInfo.password}}" [(ngModel)]="userInfo.password" (input)="inputChange($event)" />
+        </div>
+        <div class="tips" *ngIf="userInfo.password!='' && userInfo.password.length<4">密码长度小于4</div>
+
+        <div class="item">
+            <div style="flex:1">昵 称:</div>
+            <input style="flex:3" type="text" value="{{userInfo.nickname}}" [(ngModel)]="userInfo.nickname" />
+        </div>
+
+        <div class="item">
+            <div style="flex:1">电 话:</div>
+            <input style="flex:3" type="text" value="{{userInfo.phone}}" [(ngModel)]="userInfo.phone" (input)="inputChange('phone')" />
+        </div>
+        <div class="tips" *ngIf="!checkPhone && userInfo.phone.length!=0">电话号码格式不正确</div>
+
+        <div class="item">
+            <div style="flex:1">邮 箱:</div>
+            <input style="flex:3" type="text" value="{{userInfo.email}}" [(ngModel)]="userInfo.email" (input)="inputChange('email')" />
+        </div>
+        <div class="tips" *ngIf="!checkEmail && userInfo.email.length!=0">邮箱格式不正确</div>
+
+        <button (click)="postChange()">保存</button>
+        <button class="logout" (click)="logout()">注销</button>
+    </div>
+
+</div>

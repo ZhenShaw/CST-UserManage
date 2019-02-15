@@ -1,0 +1,242 @@
+.component {
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(236, 239, 240);
+    /* border: 1px solid rgb(36, 34, 34); */
+    padding: 10px;
+}
+
+img.logout {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
+}
+
+.title {
+    color: grey;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+
+/* 功能栏 */
+
+.func {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    /* border: 1px solid rebeccapurple; */
+    align-items: center
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px
+}
+
+.search input {
+    width: 200px;
+    height: 30px;
+    outline: 0;
+    border: 0;
+    font-size: 100%;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.search div {
+    font-size: 110%;
+    font-weight: bold;
+    color: #27302bd8
+}
+
+.func button {
+    height: 40px;
+    outline: 0;
+    margin: 0px 20px;
+    padding: 0px 15px;
+    color: white;
+    border-radius: 25px;
+    background-color: #23ac5b;
+    font-size: 100%;
+}
+
+
+/* 表格区域 */
+
+.table {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px dotted gainsboro;
+    text-align: center;
+    padding: 5px 0px;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.table label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.scroll :hover {
+    background-color: rgba(184, 183, 183, 0.863)
+}
+
+.scroll {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: aliceblue;
+    border: 1px dotted whitesmoke;
+}
+
+.table-header {
+    font-size: 105%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border: 0px;
+}
+
+.table-header input {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    border-right: 1px dotted gainsboro;
+    border-left: 1px dotted gainsboro;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* border: 1px solid #23ac5b; */
+}
+
+
+/* 修改checkbox默认样式 */
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+input[type="checkbox"]:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 25%;
+    border: 2px solid #bfbfbf;
+}
+
+input[type="checkbox"]:checked:after {
+    content: "";
+    background: #0593d3;
+    border: 2px solid #fff;
+}
+
+
+/* 编辑删除 */
+
+.operate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.operate .edit {
+    color: rgb(43, 43, 243);
+}
+
+.operate .delete {
+    color: rgba(255, 0, 0, 0.822);
+}
+
+.no-result {
+    text-align: center;
+    font-size: 120%;
+    margin: 150px
+}
+
+
+/* 底部翻页 */
+
+.page-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.page-nav img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 15px;
+}
+
+.page-nav img:hover {
+    background: rgba(144, 217, 247, 0.452);
+    border-radius: 50%
+}
+
+.page-nav img:active {
+    background: rgba(120, 212, 248, 0.76);
+    border-radius: 50%
+}
+
+.count {
+    font-size: 105%;
+    font-weight: bold;
+    color: rgba(136, 101, 68, 0.781);
+    margin: 0px 100px;
+}
+
+.switch-page input {
+    width: 60px;
+    height: 25px;
+    outline: 0;
+    border: 0;
+    font-size: 100%;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.switch-page button {
+    height: 30px;
+    outline: 0;
+    margin: 0px 10px;
+    padding: 0px 7px;
+    color: white;
+    border-radius: 5px;
+    background-color: #23ac5b;
+    font-size: 100%;
+}

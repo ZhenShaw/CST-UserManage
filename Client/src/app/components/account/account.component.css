@@ -1,0 +1,92 @@
+.component {
+    margin: 100px auto;
+    width: 550px;
+    /* height: 550px; */
+    overflow: hidden;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgb(236, 239, 240);
+    text-align: right;
+    /* border: 1px solid red; */
+}
+
+.title {
+    color: grey;
+    font-size: 140%;
+    font-weight: bold;
+    padding: 20px;
+    /* border: 1px solid red; */
+}
+
+input {
+    /* 去掉获得焦点时的外边框 */
+    outline: 0;
+    width: 220px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-size: 100%;
+    border: 1px solid rgb(207, 205, 205);
+}
+
+.username {
+    width: 220px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 100%;
+}
+
+button {
+    outline: 0;
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    color: white;
+    border-radius: 25px;
+    background-color: #23ac5b;
+    font-size: 120%;
+}
+
+
+/* 底部 */
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logout {
+    border: 1rpx solid red;
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 95%;
+    width: 120px;
+}
+
+.tips {
+    color: red;
+    font-size: 80%;
+}

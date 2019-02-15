@@ -1,0 +1,190 @@
+img.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+
+/* 内容区域 */
+
+.context {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgb(236, 239, 240);
+    text-align: right;
+}
+
+.title {
+    color: grey;
+    font-size: 140%;
+    font-weight: bold;
+    padding: 20px;
+    /* border: 1px solid red; */
+}
+
+input {
+    /* 去掉获得焦点时的外边框 */
+    outline: 0;
+    width: 220px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-size: 100%;
+    border: 1px solid rgb(207, 205, 205);
+}
+
+.username {
+    width: 220px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 100%;
+}
+
+button {
+    outline: 0;
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    color: white;
+    border-radius: 25px;
+    background-color: #23ac5b;
+    font-size: 120%;
+}
+
+.tips {
+    color: red;
+    font-size: 80%;
+}
+
+
+/* 底部 */
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.delete {
+    background-color: rgba(247, 34, 34, 0.884);
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 95%;
+    width: 120px;
+}
+
+
+/* 遮罩层 */
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 8, 8, 0.3);
+    z-index: 1001;
+}
+
+
+/* 模态弹窗区域 */
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 450px;
+    height: 550px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: rgb(236, 239, 240);
+    z-index: 1002;
+    overflow: auto;
+    animation: scaleIn .3s;
+}
+
+.add-modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 450px;
+    height: 380px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: rgb(236, 239, 240);
+    z-index: 1002;
+    overflow: auto;
+    animation: scaleIn .3s;
+}
+
+
+/* 从上往下淡入 */
+
+@keyframes fadeInDown {
+    0% {
+        transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+
+/* 缩放淡入 */
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* 缩放淡出 */
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+}

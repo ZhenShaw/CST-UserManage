@@ -1,0 +1,12 @@
+<div class="component">
+    <div class="body">
+        <div class="welcome">找回密码</div>
+
+        <div class="form">
+            <input *ngIf="!open" type="text" placeholder="用户名" [(ngModel)]="username" />
+            <input *ngIf="open" type="number" placeholder="绑定的手机号码" [(ngModel)]="phoneNum" />
+            <button (click)="click()">下一步</button>
+        </div>
+
+    </div>
+</div>

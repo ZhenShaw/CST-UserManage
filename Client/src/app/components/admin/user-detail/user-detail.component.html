@@ -1,0 +1,79 @@
+<body>
+    <!-- 遮罩 -->
+    <div id="fade" class="overlay"></div>
+
+    <!-- 个人信息弹窗区域 -->
+    <div id="light" class="modal">
+        <img class="close" (click)="close()" src="../../../../assets/close.png" alt="关闭">
+
+        <div class="context">
+            <div class="title">个人信息</div>
+
+            <div class="item">
+                <div style="flex:1">用户名:</div>
+                <div style="flex:3" class="username" id="username">{{userInfo.username}}</div>
+            </div>
+
+            <div class="item">
+                <div style="flex:1">密 码:*</div>
+                <input style="flex:3" type="password" value="{{userInfo.password}}" [(ngModel)]="userInfo.password" (input)="inputChange($event)" />
+            </div>
+            <div class="tips" *ngIf="userInfo.password!='' && userInfo.password.length<4">密码长度小于4</div>
+
+            <div class="item">
+                <div style="flex:1">昵 称:</div>
+                <input style="flex:3" type="text" value="{{userInfo.nickname}}" [(ngModel)]="userInfo.nickname" />
+            </div>
+
+            <div class="item">
+                <div style="flex:1">电 话:*</div>
+                <input style="flex:3" type="text" value="{{userInfo.phone}}" [(ngModel)]="userInfo.phone" (input)="inputChange('phone')" />
+            </div>
+            <div class="tips" *ngIf="!checkPhone && userInfo.phone.length!=0">电话号码格式不正确</div>
+
+            <div class="item">
+                <div style="flex:1">邮 箱:</div>
+                <input style="flex:3" type="text" value="{{userInfo.email}}" [(ngModel)]="userInfo.email" (input)="inputChange('email')" (keyup)="keyUp($event)" />
+            </div>
+            <div class="tips" *ngIf="!checkEmail && userInfo.email.length!=0">邮箱格式不正确</div>
+
+
+            <button (click)="postChange()">保存</button>
+            <div>
+                <button class="delete" style="background-color:#ee6817" (click)="logicDel()" *ngIf="userInfo.identity!='管理员'">逻辑删除</button>
+                <button class="delete" (click)="deleteUser()" *ngIf="userInfo.identity!='管理员'">删除</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 添加用户弹窗 -->
+    <div id="add" class="add-modal">
+        <img class="close" (click)="close()" src="../../../../assets/close.png" alt="关闭">
+
+        <div class="context">
+            <div class="title">添加用户</div>
+
+            <div class="item">
+                <div style="flex:1">用户:</div>
+                <input style="flex:3" type="text" [(ngModel)]="userInfo.username" (input)="inputChange($event)" />
+            </div>
+            <div class="tips" *ngIf="checkUsername">用户名不能含有汉字</div>
+
+            <div class="item">
+                <div style="flex:1">密 码:</div>
+                <input style="flex:3" type="password" [(ngModel)]="userInfo.password" (input)="inputChange($event)" />
+            </div>
+            <div class="tips" *ngIf="userInfo.password!='' && userInfo.password.length<4">密码长度小于4</div>
+
+            <div class="item">
+                <div style="flex:1">电 话:</div>
+                <input style="flex:3" type="text" [(ngModel)]="userInfo.phone" (input)="inputChange('phone')" (keydown)="keyDown($event)" />
+            </div>
+            <div class="tips" *ngIf="!checkPhone && userInfo.phone.length!=0">电话号码格式不正确</div>
+            <button (click)="addUser()">添加</button>
+        </div>
+    </div>
+
+</body>

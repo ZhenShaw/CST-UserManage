@@ -1,0 +1,27 @@
+<div class="component">
+    <div class="avatar"><img src="../../../assets/user.png" alt="" srcset=""></div>
+
+    <div class="body">
+        <div class="title"> </div>
+
+        <div class="form">
+            <input type="text" id="username" [(ngModel)]="loginForm.username" placeholder="用户名" />
+            <input type="password" id="password" [(ngModel)]="loginForm.password" (keydown)="keyDown($event)" placeholder="密码" />
+            <button (click)="login()">登录</button>
+        </div>
+        <div style="font-size:80%;color:grey">管理员: Admin----admin</div>
+        <div class="bottom">
+            <div class="login-way">
+                <img src="../../../assets/QQ.png" alt="QQ登录">
+                <img src="../../..//assets/weixin.png" alt="微信登录">
+                <img src="../../..//assets/zfb.png" alt="支付宝登录">
+            </div>
+            <div class="bottom-text">
+                <a routerLink="/register">用户注册</a>
+            </div>
+            <div class="bottom-text">
+                <a routerLink="/forget">忘记密码</a>
+            </div>
+        </div>
+    </div>
+</div>

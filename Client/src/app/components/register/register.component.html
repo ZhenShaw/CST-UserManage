@@ -1,0 +1,33 @@
+<div class="component">
+    <div class="body">
+        <div class="welcome">用户注册</div>
+
+        <div class="form">
+            <input type="text" id="username" placeholder="用户名" [(ngModel)]="user.username" (input)="inputChange($event)" />
+            <div class="tips" *ngIf="checkUsername">用户名不能含有汉字</div>
+
+            <input type="password" id="password" placeholder="密码" [(ngModel)]="user.password" />
+            <div class="tips" *ngIf="user.password!='' && user.password.length<4">密码长度小于4</div>
+
+            <input type="password" placeholder="确认密码" [(ngModel)]="checkPassword" />
+            <div class="tips" *ngIf="checkPassword !='' && user.password != checkPassword">两次密码不一致</div>
+
+            <input type="number" id="phone" placeholder="手机号码" maxlength="11" [(ngModel)]="phone" (input)="inputChange($event)" />
+            <div class="tips" *ngIf="!checkPhone && user.phone.length!=0">电话号码格式不正确</div>
+
+            <button (click)="postRegister()">注册</button>
+        </div>
+
+        <div class="bottom">
+            <div class="login-way">
+                <img src="../../../assets/QQ.png" alt="QQ登录">
+                <img src="../../..//assets/weixin.png" alt="微信登录">
+                <img src="../../..//assets/zfb.png" alt="支付宝登录">
+            </div>
+            <div class="bottom-text">
+                <a routerLink="/login">登录</a>
+            </div>
+        </div>
+
+    </div>
+</div>

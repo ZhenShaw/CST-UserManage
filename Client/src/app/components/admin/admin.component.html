@@ -1,0 +1,67 @@
+<app-user-detail #child (logicDelTrigger)="logicDel($event)" (updateTrigger)="update()"></app-user-detail>
+<div class="component" id="body">
+    <div class="body">
+        <img (click)="logout()" class="logout" src="../../../assets/logout.png" alt="注销">
+        <div class="title">用户列表</div>
+
+        <!-- 功能栏 -->
+        <div class="func">
+            <div class="search">
+                <div (click)="accureteQuery()">模糊查询：</div>
+                <input type="text" placeholder="用户名/手机号/邮箱" [(ngModel)]="findStr" (input)="inputChange()" (keyup)="keyUp($event)">
+            </div>
+            <button (click)="oredrByTime()">注册时间↑↓</button>
+            <button (click)="child.openAdd()">添加用户</button>
+            <button (click)="delChecked()" style="background-color:rgba(247, 34, 34, 0.884)">删除选中</button>
+        </div>
+
+        <!-- 表头 -->
+        <div class="table table-header">
+            &nbsp;<input type="checkbox" style="flex:0.5" class="allCheckBox" (click)="selectAll($event)">
+            <div style="flex:1">UID</div>
+            <div style="flex:1.5">用户名</div>
+            <div style="flex:1">身份</div>
+            <div style="flex:1">昵称</div>
+            <div style="flex:2">电话</div>
+            <div style="flex:2">邮箱</div>
+            <div style="flex:2">注册时间</div>
+            <div style="flex:1">操作</div>
+        </div>
+        <!-- 表体 -->
+        <div class="scroll">
+            <div class="table" *ngFor="let item of userList">
+                <input [id]="item.uid" class="cell" type="checkbox" style="flex:0.5">
+                <label [for]="item.uid" style="flex:9.5">
+          <div class="cell" style="flex:1">{{item.uid}}</div>
+          <div class="cell" style="flex:1.5">{{item.username}}</div>
+          <div class="cell" style="flex:1">{{item.identity}}</div>
+          <div class="cell" style="flex:1">{{item.nickname}}</div>
+          <div class="cell" style="flex:2">{{item.phone}}</div>
+          <div class="cell" style="flex:2">{{item.email}}</div>
+          <div class="cell" style="flex:2">{{cutter(item.created_date)}}</div>
+        </label>
+                <div class="cell operate" style="flex:1">
+                    <div class="edit" (click)="child.open(item.username)">编辑</div>
+                    <div class="delete" (click)="logicDel(item.uid)" *ngIf="item.identity!='管理员'">删除</div>
+                </div>
+            </div>
+            <div class="no-result" *ngIf="userList==null">{{tips}}</div>
+        </div>
+
+        <!-- 换页 -->
+        <div class="page-nav">
+            <div class="count"> 共{{count}}条数据</div>
+            <div>
+                <img (click)="pageUp()" src="../../../assets/previous.png" alt="上一页">
+                <img (click)="pageDown()" src="../../../assets/next.png" alt="下一页">
+            </div>
+            <div class="count">第{{page}}页 / 共{{totalPages}}页</div>
+            <div class="switch-page">
+                <input type="number" [(ngModel)]="switchPage">
+                <button *ngIf="switchPage<=totalPages && switchPage>=0 || switchPage==null" (click)="jumpPage()">转跳</button>
+                <button *ngIf="switchPage>totalPages || switchPage<0" style="background-color:grey">转跳</button>
+            </div>
+        </div>
+
+    </div>
+</div>
