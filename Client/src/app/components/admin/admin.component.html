@@ -1,7 +1,7 @@
 <app-user-detail #child (logicDelTrigger)="logicDel($event)" (updateTrigger)="update()"></app-user-detail>
 <div class="component" id="body">
     <div class="body">
-        <img (click)="logout()" class="logout" src="../../../assets/logout.png" alt="注销">
+        <img (click)="logout()" class="logout" src="/assets/logout.png" alt="注销">
         <div class="title">用户列表</div>
 
         <!-- 功能栏 -->
@@ -52,8 +52,8 @@
         <div class="page-nav">
             <div class="count"> 共{{count}}条数据</div>
             <div>
-                <img (click)="pageUp()" src="../../../assets/previous.png" alt="上一页">
-                <img (click)="pageDown()" src="../../../assets/next.png" alt="下一页">
+                <img (click)="pageUp()" src="/assets/previous.png" alt="上一页">
+                <img (click)="pageDown()" src="/assets/next.png" alt="下一页">
             </div>
             <div class="count">第{{page}}页 / 共{{totalPages}}页</div>
             <div class="switch-page">
